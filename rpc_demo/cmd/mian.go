@@ -8,12 +8,13 @@ import (
 	"net"
 )
 
-const port = "5050"
+const port = ":50052"
 
 func main() {
 	lis, err := net.Listen("tcp", port)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
+		return
 	}
 
 	s := grpc.NewServer()

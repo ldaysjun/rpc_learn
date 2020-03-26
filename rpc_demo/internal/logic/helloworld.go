@@ -7,6 +7,7 @@ import (
 )
 
 func (g *greeter) SayHello(ctx context.Context, req *helloworld.HelloRequest) (*helloworld.HelloReply, error) {
+	fmt.Println("SayHello")
 	rsp := &helloworld.HelloReply{
 		Message: fmt.Sprintf("hello:%s", req.Name),
 	}
