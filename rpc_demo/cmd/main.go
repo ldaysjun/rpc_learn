@@ -1,11 +1,11 @@
 package main
 
 import (
-	"github.com/ldaysjun/rpc_learn/protobuf/helloworld"
-	"github.com/ldaysjun/rpc_learn/rpc_demo/internal/logic"
-	"google.golang.org/grpc"
-	"log"
-	"net"
+"github.com/ldaysjun/rpc_learn/protobuf/helloworld"
+"github.com/ldaysjun/rpc_learn/rpc_demo/internal/logic"
+"google.golang.org/grpc"
+"log"
+"net"
 )
 
 const port = ":50052"
@@ -16,7 +16,6 @@ func main() {
 		log.Fatalf("failed to listen: %v", err)
 		return
 	}
-
 	s := grpc.NewServer()
 	imp, err := logic.NewGreeter()
 	if err != nil {

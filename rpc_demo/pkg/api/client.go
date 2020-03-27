@@ -15,7 +15,6 @@ func NewGreeterClient() helloworld.GreeterClient {
 	if err != nil {
 		log.Fatalf("did not connect: %v", err)
 	}
-	defer conn.Close()
 	c := helloworld.NewGreeterClient(conn)
 	return c
 }
