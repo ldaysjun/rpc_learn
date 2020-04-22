@@ -11,17 +11,19 @@ import (
 
 func main() {
 	client := api.NewGreeterClient()
-	req := &helloworld.HelloRequest{
-		Name: "ldaysjun",
+	for i := 0;i<1 ;i++  {
+		fmt.Println("1")
+		req := &helloworld.HelloRequest{
+			Name: "ldaysjun",
+		}
+		ctx, _ := context.WithTimeout(context.Background(), time.Second * 3)
+		rsp, err := client.SayHello(ctx, req)
+		if err != nil {
+			log.Fatalf("failed to serve: %v", err)
+		}
+		fmt.Println("rsp.message = ", rsp.Message)
 	}
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
-	defer cancel()
-	rsp, err := client.SayHello(ctx, req)
-	if err != nil {
-		log.Fatalf("failed to serve: %v", err)
-	}
-
-
-
-	fmt.Println("rsp.message = ", rsp.Message)
+	time.Sleep(time.Hour)
 }
+
+

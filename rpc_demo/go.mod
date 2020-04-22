@@ -2,12 +2,18 @@ module github.com/ldaysjun/rpc_learn/rpc_demo
 
 go 1.12
 
+replace github.com/coreos/go-systemd => github.com/coreos/go-systemd/v22 v22.0.0
+
 require (
-	github.com/golang/protobuf v1.3.5 // indirect
-	github.com/ldaysjun/rpc_learn v0.0.0-20200326121708-0a4911a8fc24
-	golang.org/x/lint v0.0.0-20190313153728-d0100b6bd8b3 // indirect
-	golang.org/x/net v0.0.0-20190311183353-d8887717615a
-	golang.org/x/tools v0.0.0-20190524140312-2c0ae7006135 // indirect
-	google.golang.org/grpc v1.28.0
-	honnef.co/go/tools v0.0.0-20190523083050-ea95bdfd59fc // indirect
+	github.com/coreos/etcd v3.3.20+incompatible
+	github.com/coreos/go-semver v0.3.0 // indirect
+	github.com/coreos/go-systemd v0.0.0-00010101000000-000000000000 // indirect
+	github.com/coreos/pkg v0.0.0-20180928190104-399ea9e2e55f // indirect
+	github.com/gogo/protobuf v1.3.1 // indirect
+	github.com/google/uuid v1.1.1 // indirect
+	github.com/ldaysjun/rpc_learn v0.0.0-20200421102348-bee686b11965
+	go.etcd.io/etcd v3.3.20+incompatible
+	go.uber.org/zap v1.14.1 // indirect
+	golang.org/x/net v0.0.0-20200324143707-d3edc9973b7e
+	google.golang.org/grpc v1.26.0
 )
