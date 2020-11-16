@@ -10,12 +10,11 @@ import (
 	"time"
 )
 
-
 func NewGreeterClient() helloworld.GreeterClient {
 	r := &balancer.ETCDResolverBuilder{}
 	resolver.Register(r)
 	ctx, _ := context.WithTimeout(context.Background(), time.Second*3)
-	conn, err := grpc.DialContext(ctx, r.Scheme()+"://rpc/demo.hello.world", grpc.WithInsecure(),grpc.WithBlock())
+	conn, err := grpc.DialContext(ctx, r.Scheme()+"://rpc/demo.hello.world", grpc.WithInsecure(), grpc.WithBlock())
 	if err != nil {
 		log.Fatalf("did not connect: %v", err)
 	}

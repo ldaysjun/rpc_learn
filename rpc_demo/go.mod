@@ -15,5 +15,6 @@ require (
 	go.etcd.io/etcd v3.3.20+incompatible
 	go.uber.org/zap v1.14.1 // indirect
 	golang.org/x/net v0.0.0-20200324143707-d3edc9973b7e
+	golang.org/x/time v0.0.0-20200630173020-3af7569d3a1e // indirect
 	google.golang.org/grpc v1.26.0
 )

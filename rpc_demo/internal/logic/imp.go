@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/coreos/etcd/clientv3"
+	"golang.org/x/time/rate"
 	"log"
 	"time"
 )
@@ -15,6 +16,8 @@ const (
 
 type greeter struct {
 	cli *clientv3.Client
+	limiter *rate.Limiter
+
 }
 
 func NewGreeter() (*greeter, error) {
@@ -25,7 +28,9 @@ func NewGreeter() (*greeter, error) {
 	})
 	imp := &greeter{
 		cli: cli,
+		limiter:rate.NewLimiter(100,10),
 	}
+
 	return imp, nil
 }
 
